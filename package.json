@@ -1,6 +1,6 @@
 {
   "name": "generator-silex-skelethon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Yeoman Generator for a Silex skelethon app.",
   "main": "app/index.js",
   "scripts": {
@@ -22,8 +22,8 @@
     "yeoman-generator"
   ],
   "author": {
-    "name":"Izzia Raffaele",
-    "email":"izziaraffaele@gmail.com"
+    "name": "Izzia Raffaele",
+    "email": "izziaraffaele@gmail.com"
   },
   "license": "MIT",
   "bugs": {
