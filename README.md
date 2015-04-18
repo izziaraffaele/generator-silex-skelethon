@@ -1,4 +1,4 @@
-# generator-silex-app 
+# Silex Skelethon Generator
 
 > [Yeoman](http://yeoman.io) generator for a Silex based web app skelethon. 
 
