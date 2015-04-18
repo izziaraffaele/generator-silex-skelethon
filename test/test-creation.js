@@ -3,7 +3,7 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('generator-silex-app', function () {
+describe('generator-silex-skelethon', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
@@ -21,7 +21,6 @@ describe('generator-silex-app', function () {
     var expected = [
         'composer.json',
         'web/.htaccess',
-        'vendor/autoload.php',
     ];
 
     this.app.options['skip-install'] = true;
