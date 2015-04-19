@@ -29,9 +29,7 @@ var Generator = yeoman.generators.Base.extend({
         this.directory('web','web');
 
         // the storage folder
-        this.mkdir('storage');
-        this.mkdir('storage/cache');
-        this.mkdir('storage/logs');
+        this.directory('storage','storage');
 
         // this.write('app/config/routes.json', JSON.stringify({'config.routes':routes}));
     }

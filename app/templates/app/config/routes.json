@@ -1,0 +1,8 @@
+[
+    {
+        "routeName": "home",
+        "pattern": "/home",
+        "method": ["get"],
+        "controller": "controllers.home:index"
+    }
+]

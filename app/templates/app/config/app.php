@@ -1,5 +1,6 @@
 <?php
 return [
     'cache' => false,
-    'debug' => true
+    'debug' => true,
+    'config.path' => APPPATH
 ];

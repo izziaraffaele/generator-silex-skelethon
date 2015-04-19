@@ -1,6 +1,4 @@
 <?php 
 return [
-    'controllers' => [
-        'auth' => 'AppBundle\Controllers\AuthController'
-    ]
+    'controllers.home' => 'AppBundle\Controllers\HomeController'
 ];

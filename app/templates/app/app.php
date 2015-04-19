@@ -11,6 +11,8 @@ use WebComposer\Provider\ErrorHandlerServiceProvider;
 
 //register silex app
 $app = new Application();
+$app['config.path'] = APPPATH;
+
 $app->register(new ConfigServiceProvider());
 
 $app['config']->loadFile('app.php');
