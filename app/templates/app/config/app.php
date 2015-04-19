@@ -2,5 +2,5 @@
 return [
     'cache' => false,
     'debug' => true,
-    'config.path' => APPPATH
+    'config.path' => APPPATH,
 ];

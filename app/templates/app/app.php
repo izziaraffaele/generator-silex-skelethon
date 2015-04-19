@@ -19,6 +19,7 @@ $app['config']->loadFile('app.php');
 $app['config']->loadFile('controllers.php');
 $app['config']->loadFile('providers.php');
 $app['config']->loadFile('routes.json');
+
 $app['debug'] = $app['config']->getItem('debug');
 
 $app->register(new ErrorHandlerServiceProvider());
@@ -29,14 +30,20 @@ if( $app['debug'] )
     $app->register(new WhoopsServiceProvider(),[
         'whoops.error_page_handler' => 'sublime'
     ]);
-    // $app['whoops'] = $app->extend('whoops', function ($whoops) {
-    //     $whoops->pushHandler(new DeleteWholeProjectHandler());
-    //     return $whoops;
-    // });
+}
+else
+{
+    $app['twig.options'] = ['cache' => BASEPATH.'/storage/cache/twig'];
+}
+
+foreach ($app['config']->getItem('controllers') as $key => $controller) 
+{
+    $app['controller.'.$key] = $app->share(function() {
+        return new $controller;
+    });
 }
 
 $serviceRegisterProvider = new ServiceRegisterProvider();
-$serviceRegisterProvider->registerServiceProvider($app, $app['config']->getItem('providers'));
-$serviceRegisterProvider->registerServiceProvider($app, $app['config']->getItem('controllers'));
+$serviceRegisterProvider->registerServiceProviders($app, $app['config']->getItem('providers'));
 
 return $app;

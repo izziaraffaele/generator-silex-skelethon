@@ -1,4 +1,6 @@
 <?php 
 return [
-    'controllers.home' => 'AppBundle\Controllers\HomeController'
+    'controllers' => [
+        'home' => 'AppBundle\Controllers\HomeController'
+    ]
 ];
