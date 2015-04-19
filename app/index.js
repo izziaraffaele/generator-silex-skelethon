@@ -8,6 +8,8 @@ var chalk = require('chalk');
 var Generator = yeoman.generators.Base.extend({
     init: function () {
         this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
+        this.options['projectName'] = this.options['projectName'] || 'myApp';
+        
         this.on('end', function () {
             if (!this.options['skip-install']) {
                 this.spawnCommand('composer', ['install']);
@@ -18,8 +20,7 @@ var Generator = yeoman.generators.Base.extend({
     },
     app: function () {
         // main htaccess
-        var appName = this.options['projectName'] || 'myApp';
-        this.template('_composer.json', 'composer.json',{'projectName':appName});
+        this.template('_composer.json', 'composer.json',{'projectName':this.options['projectName']});
         this.copy('phpunit.xml.dist', 'phpunit.xml.dist');
 
         // webroot & bootstrap
