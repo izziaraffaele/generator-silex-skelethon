@@ -9,14 +9,6 @@ var Generator = yeoman.generators.Base.extend({
     init: function () {
         this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
         this.options['projectName'] = this.options['projectName'] || 'myApp';
-        
-        this.on('end', function () {
-            if (!this.options['skip-install']) {
-                this.spawnCommand('composer', ['install']);
-                this.spawnCommand('chmod', ['-R','777','storage']);
-            }
-        });
-
     },
     app: function () {
         // main htaccess
