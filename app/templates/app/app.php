@@ -5,6 +5,7 @@ use Symfony\Component\Debug\Debug;
 
 // Application
 use MJanssen\Provider\ServiceRegisterProvider;
+use MJanssen\Provider\RoutingServiceProvider;
 use Whoops\Provider\Silex\WhoopsServiceProvider;
 use WebComposer\Provider\ConfigServiceProvider;
 use WebComposer\Provider\ErrorHandlerServiceProvider;
@@ -36,14 +37,17 @@ else
     $app['twig.options'] = ['cache' => BASEPATH.'/storage/cache/twig'];
 }
 
+$serviceRegisterProvider = new ServiceRegisterProvider();
+$serviceRegisterProvider->registerServiceProviders($app, $app['config']->getItem('providers'));
+
 foreach ($app['config']->getItem('controllers') as $key => $controller) 
 {
-    $app['controller.'.$key] = $app->share(function() use( $controller, $app ){
+    $app['controller.'.$key] = $app->share(function() use ( $controller, $app ) {
         return new $controller($app);
     });
 }
 
-$serviceRegisterProvider = new ServiceRegisterProvider();
-$serviceRegisterProvider->registerServiceProviders($app, $app['config']->getItem('providers'));
+$router = new RoutingServiceProvider();
+$router->addRoutes($app, $app['config']->getItem('routes'));
 
 return $app;

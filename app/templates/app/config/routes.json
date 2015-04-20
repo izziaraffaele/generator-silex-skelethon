@@ -1,26 +1,16 @@
-[
-    {
-        "routeName": "home",
-        "pattern": "/",
-        "method": ["get"],
-        "controller": "controller.home:index"
-    },
-    {
-        "routeName": "home",
-        "pattern": "/home",
-        "method": ["get"],
-        "controller": "controller.home:index"
-    },
-    {
-        "routeName": "login",
-        "pattern": "/login",
-        "method": ["get"],
-        "controller": "controller.auth:login"
-    },
-    {
-        "routeName": "signup",
-        "pattern": "/signup",
-        "method": ["get"],
-        "controller": "controller.auth:signup"
-    }
-]
+{
+    "routes":[
+        {
+            "routeName": "home",
+            "pattern": "/",
+            "method": ["get"],
+            "controller": "controller.home:index"
+        },
+        {
+            "routeName": "home",
+            "pattern": "/home",
+            "method": ["get"],
+            "controller": "controller.home:index"
+        }
+    ]
+}
