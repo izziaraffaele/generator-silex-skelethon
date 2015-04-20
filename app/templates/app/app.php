@@ -38,8 +38,8 @@ else
 
 foreach ($app['config']->getItem('controllers') as $key => $controller) 
 {
-    $app['controller.'.$key] = $app->share(function() {
-        return new $controller;
+    $app['controller.'.$key] = $app->share(function() use( $controller, $app ){
+        return new $controller($app);
     });
 }
 

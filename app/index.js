@@ -23,8 +23,6 @@ var Generator = yeoman.generators.Base.extend({
 
         // the storage folder
         this.directory('storage','storage');
-
-        // this.write('app/config/routes.json', JSON.stringify({'config.routes':routes}));
     }
 });
 
