@@ -11,7 +11,7 @@
          bootstrap="./tests/bootstrap.php"
 >
     <testsuites>
-        <testsuite name="WebComposer test suite">
+        <testsuite name="<%= projectName %> test suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

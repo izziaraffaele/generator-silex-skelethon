@@ -19,7 +19,7 @@ var Generator = yeoman.generators.Base.extend({
     app: function () {
         // main htaccess
         this.template('_composer.json', 'composer.json',{'projectName':this.options['projectName']});
-        this.copy('phpunit.xml.dist', 'phpunit.xml.dist');
+        this.template('_phpunit.xml.dist', '_phpunit.xml.dist');
 
         // webroot & bootstrap
         this.directory('app','app');
