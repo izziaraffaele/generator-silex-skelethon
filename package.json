@@ -1,6 +1,6 @@
 {
   "name": "generator-silex-skelethon",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A Yeoman Generator for a Silex skelethon app.",
   "main": "app/index.js",
   "scripts": {
